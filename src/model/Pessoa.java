@@ -1,8 +1,20 @@
+package model;
+
 public class Pessoa {
     private int idade;
     private String nome;
     private String telefone;
     private String email;
+
+    public Pessoa() {
+    }
+
+    public Pessoa(int idade, String nome, String telefone, String email) {
+        this.idade = idade;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+    }
 
     public int getIdade() {
         return idade;
