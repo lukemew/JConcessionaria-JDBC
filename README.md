@@ -40,6 +40,4 @@ Este projeto é uma aplicação de gerenciamento de concessionária de veículos
 ## Finalidade do Projeto
 Este projeto foi desenvolvido como parte do projeto final da disciplina de Programação Orientada a Objetos (POO) do IFCE Campus Boa Viagem. O objetivo principal é aplicar conceitos fundamentais da POO, incluindo herança, encapsulamento e polimorfismo, bem como implementar técnicas de persistência de dados utilizando JDBC.
 
-Através da construção de uma aplicação de gerenciamento de concessionária, o projeto visa proporcionar aos usuários uma interface gráfica amigável (GUI) para gerenciar veículos e clientes. As funcionalidades incluem a adição, edição e remoção de veículos, além de um sistema de login para vendedores e clientes.
-
-Além disso, o projeto serve como um exemplo prático de como integrar a teoria da programação com a construção de uma aplicação real, demonstrando a importância dos conceitos aprendidos ao longo do curso.
+O projeto serve como um exemplo prático de como integrar a teoria da programação com a construção de uma aplicação real, demonstrando a importância dos conceitos aprendidos ao longo do curso.
