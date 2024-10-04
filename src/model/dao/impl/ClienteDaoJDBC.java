@@ -1,4 +1,5 @@
 package model.dao.impl;
+import model.dao.ClienteDao;
 
 import db.DB;
 import model.dao.ClienteDao;

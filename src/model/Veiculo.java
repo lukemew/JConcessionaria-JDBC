@@ -4,6 +4,7 @@ public class Veiculo {
     private int ano;
     private String modelo;
     private String cor;
+  // Novo atributo para preço
 
     public Veiculo() {}
 
@@ -11,8 +12,10 @@ public class Veiculo {
         this.ano = ano;
         this.modelo = modelo;
         this.cor = cor;
+
     }
 
+    // Getters e Setters
     public int getAno() {
         return ano;
     }
@@ -36,4 +39,5 @@ public class Veiculo {
     public void setCor(String cor) {
         this.cor = cor;
     }
+
 }
