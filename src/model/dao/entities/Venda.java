@@ -1,26 +1,21 @@
 package model.dao.entities;
 
 public class Venda {
-    private Integer idVenda;
+
     private Carro carroId;
     private Cliente clienteId;
+    private Vendedor vendedorId;
+    private double valorTotal;
 
     public Venda(){
     }
 
-    public Venda(Integer idVenda, Carro carroId, Cliente clienteId) {
-        this.idVenda = idVenda;
+    public Venda(Integer idVenda, Carro carroId, Cliente clienteId, Vendedor vendedorId, double valorTotal) {
         this.carroId = carroId;
         this.clienteId = clienteId;
+        this.valorTotal = valorTotal;
     }
 
-    public Integer getIdVenda() {
-        return idVenda;
-    }
-
-    public void setIdVenda(Integer idVenda) {
-        this.idVenda = idVenda;
-    }
 
     public Carro getCarroId() {
         return carroId;
