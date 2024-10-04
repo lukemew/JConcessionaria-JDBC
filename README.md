@@ -24,9 +24,22 @@ Este projeto é uma aplicação de gerenciamento de concessionária de veículos
 
 ## Screenshots
 
+*Aqui o usuário seleciona se ele é um vendedor ou cliente, e loga no sistema.*
 
-## Como Executar o Projeto
-1. Certifique-se de ter o **Java** e o **MySQL** instalados em sua máquina.
-2. Clone este repositório:
-   ```bash
-   git clone https://github.com/username/TOPcar.git
+![Tela de Login](src/imagens/screenshots/TelaDeLogin.png)
+
+*Aqui o cliente tem a opção de sair (deslogar da conta) ou escolher algum dos carros disponíveis para que possa fazer um test drive.*
+
+![Tela do Cliente](src/imagens/screenshots/TelaDoCLiente.png)
+
+*Aqui o vendedor poderá editar informações que o cliente vê, como deletar o carro, ou editar o modelo, ano e cor do carro.*
+
+![Tela do Vendedor](src/imagens/screenshots/TelaDoVendedor.png)
+
+
+## Finalidade do Projeto
+Este projeto foi desenvolvido como parte do projeto final da disciplina de Programação Orientada a Objetos (POO) do IFCE Campus Boa Viagem. O objetivo principal é aplicar conceitos fundamentais da POO, incluindo herança, encapsulamento e polimorfismo, bem como implementar técnicas de persistência de dados utilizando JDBC.
+
+Através da construção de uma aplicação de gerenciamento de concessionária, o projeto visa proporcionar aos usuários uma interface gráfica amigável (GUI) para gerenciar veículos e clientes. As funcionalidades incluem a adição, edição e remoção de veículos, além de um sistema de login para vendedores e clientes.
+
+Além disso, o projeto serve como um exemplo prático de como integrar a teoria da programação com a construção de uma aplicação real, demonstrando a importância dos conceitos aprendidos ao longo do curso.
