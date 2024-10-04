@@ -22,7 +22,7 @@ public class VeiculoDaoJDBC implements VeiculoDao {
         PreparedStatement st = null;
         try {
             st = conn.prepareStatement(
-                    "INSERT INTO veiculos (modelo, ano, cor) VALUES (?, ?, ?)",  // Mudança no nome da tabela
+                    "INSERT INTO veiculos (modelo, ano, cor) VALUES (?, ?, ?)",  
                     Statement.RETURN_GENERATED_KEYS);
 
             st.setString(1, veiculo.getModelo());
@@ -53,7 +53,7 @@ public class VeiculoDaoJDBC implements VeiculoDao {
         PreparedStatement st = null;
         try {
             st = conn.prepareStatement(
-                    "DELETE FROM veiculos WHERE modelo = ?");  // Mudança no nome da tabela
+                    "DELETE FROM veiculos WHERE modelo = ?");  
 
             st.setString(1, modelo);
 
@@ -74,7 +74,7 @@ public class VeiculoDaoJDBC implements VeiculoDao {
         PreparedStatement st = null;
         ResultSet rs = null;
         try {
-            st = conn.prepareStatement("SELECT * FROM veiculos ORDER BY modelo");  // Mudança no nome da tabela
+            st = conn.prepareStatement("SELECT * FROM veiculos ORDER BY modelo");  
 
             rs = st.executeQuery();
 
@@ -96,12 +96,12 @@ public class VeiculoDaoJDBC implements VeiculoDao {
         }
     }
 
-    // Novo método para atualizar o veículo
+    
     public void atualizarVeiculo(Veiculo veiculo) {
         PreparedStatement st = null;
         try {
             st = conn.prepareStatement(
-                    "UPDATE veiculos "  // Mudança no nome da tabela
+                    "UPDATE veiculos "  
                             + "SET ano = ?, cor = ? "
                             + "WHERE modelo = ?");
 
