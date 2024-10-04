@@ -17,7 +17,7 @@ public class TelaVendedor extends JFrame {
 
     public TelaVendedor() {
         veiculoDao = new VeiculoDaoJDBC(DB.getConnection());
-        listaVeiculos = veiculoDao.buscarTodosVeiculos(); // Buscar os veículos do banco
+        listaVeiculos = veiculoDao.buscarTodosVeiculos(); 
 
         setTitle("Área do Vendedor - Concessionária TOPcar");
         setSize(600, 400);
@@ -25,16 +25,16 @@ public class TelaVendedor extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Painel de Formulário
-        JPanel panelForm = new JPanel(new GridLayout(5, 2, 10, 10)); // Adicionado um campo extra para a ComboBox
+        
+        JPanel panelForm = new JPanel(new GridLayout(5, 2, 10, 10)); 
         panelForm.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         panelForm.setBackground(new Color(30, 30, 30));
 
-        // ComboBox para selecionar o veículo a ser editado
+       
         JLabel lblSelecionar = new JLabel("Selecionar Veículo:");
         lblSelecionar.setForeground(Color.WHITE);
         comboVeiculos = new JComboBox<>();
-        carregarVeiculosNoComboBox(); // Carrega os veículos na combo box
+        carregarVeiculosNoComboBox(); 
         comboVeiculos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,7 +42,7 @@ public class TelaVendedor extends JFrame {
             }
         });
 
-        // Componentes do Formulário
+       
         JLabel lblModelo = new JLabel("Modelo:");
         lblModelo.setForeground(Color.WHITE);
         txtModelo = new JTextField();
@@ -64,12 +64,12 @@ public class TelaVendedor extends JFrame {
         panelForm.add(lblCor);
         panelForm.add(txtCor);
 
-        // Painel de Botões
+       
         JPanel panelButtons = new JPanel(new GridLayout(1, 4, 10, 10));
         panelButtons.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panelButtons.setBackground(new Color(30, 30, 30));
 
-        // Botão Adicionar Veículo
+      
         btnAdicionar = new JButton("Adicionar Veículo");
         btnAdicionar.setBackground(Color.BLACK);
         btnAdicionar.setForeground(Color.YELLOW);
@@ -81,7 +81,7 @@ public class TelaVendedor extends JFrame {
             }
         });
 
-        // Botão Editar Veículo
+        
         btnEditar = new JButton("Editar Veículo");
         btnEditar.setBackground(Color.BLACK);
         btnEditar.setForeground(Color.ORANGE);
@@ -93,7 +93,7 @@ public class TelaVendedor extends JFrame {
             }
         });
 
-        // Botão Deletar Veículo
+        
         btnDeletar = new JButton("Deletar Veículo");
         btnDeletar.setBackground(Color.BLACK);
         btnDeletar.setForeground(Color.RED);
@@ -105,7 +105,7 @@ public class TelaVendedor extends JFrame {
             }
         });
 
-        // Botão Sair
+        
         btnSair = new JButton("Sair");
         btnSair.setBackground(Color.BLACK);
         btnSair.setForeground(Color.WHITE);
@@ -127,15 +127,15 @@ public class TelaVendedor extends JFrame {
         add(panelButtons, BorderLayout.SOUTH);
     }
 
-    // Método para carregar veículos no ComboBox
+    
     private void carregarVeiculosNoComboBox() {
-        comboVeiculos.removeAllItems(); // Limpa a combo box
+        comboVeiculos.removeAllItems(); 
         for (Veiculo veiculo : listaVeiculos) {
-            comboVeiculos.addItem(veiculo.getModelo()); // Adiciona o modelo do veículo na combo box
+            comboVeiculos.addItem(veiculo.getModelo()); 
         }
     }
 
-    // Método para carregar os dados do veículo selecionado
+    
     private void carregarDadosVeiculoSelecionado() {
         int index = comboVeiculos.getSelectedIndex();
         if (index >= 0) {
@@ -146,7 +146,7 @@ public class TelaVendedor extends JFrame {
         }
     }
 
-    // Método para adicionar veículo
+   
     private void adicionarVeiculo() {
         try {
             int ano = Integer.parseInt(txtAno.getText());
@@ -157,8 +157,8 @@ public class TelaVendedor extends JFrame {
             veiculoDao.adicionarVeiculo(veiculo);
 
             JOptionPane.showMessageDialog(null, "Veículo adicionado com sucesso!");
-            listaVeiculos = veiculoDao.buscarTodosVeiculos(); // Atualiza a lista
-            carregarVeiculosNoComboBox(); // Atualiza o combo box
+            listaVeiculos = veiculoDao.buscarTodosVeiculos(); 
+            carregarVeiculosNoComboBox(); 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor, insira um ano válido.");
         } catch (Exception e) {
@@ -166,7 +166,7 @@ public class TelaVendedor extends JFrame {
         }
     }
 
-    // Método para editar veículo
+    
     private void editarVeiculo() {
         int index = comboVeiculos.getSelectedIndex();
         if (index >= 0) {
@@ -180,11 +180,11 @@ public class TelaVendedor extends JFrame {
                 veiculo.setModelo(modelo);
                 veiculo.setCor(cor);
 
-                veiculoDao.atualizarVeiculo(veiculo); // Atualiza o veículo no banco de dados
+                veiculoDao.atualizarVeiculo(veiculo); 
 
                 JOptionPane.showMessageDialog(null, "Veículo atualizado com sucesso!");
-                listaVeiculos = veiculoDao.buscarTodosVeiculos(); // Atualiza a lista
-                carregarVeiculosNoComboBox(); // Atualiza o combo box
+                listaVeiculos = veiculoDao.buscarTodosVeiculos(); 
+                carregarVeiculosNoComboBox(); 
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Por favor, insira um ano válido.");
             } catch (Exception e) {
@@ -193,7 +193,7 @@ public class TelaVendedor extends JFrame {
         }
     }
 
-    // Método para deletar veículo
+    
     private void deletarVeiculo() {
         int index = comboVeiculos.getSelectedIndex();
         if (index >= 0) {
@@ -201,8 +201,8 @@ public class TelaVendedor extends JFrame {
 
             veiculoDao.deletarVeiculoPelaCor(modelo);
             JOptionPane.showMessageDialog(null, "Veículo deletado com sucesso!");
-            listaVeiculos = veiculoDao.buscarTodosVeiculos(); // Atualiza a lista
-            carregarVeiculosNoComboBox(); // Atualiza o combo box
+            listaVeiculos = veiculoDao.buscarTodosVeiculos(); 
+            carregarVeiculosNoComboBox(); 
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, selecione o modelo do veículo a ser deletado.");
         }
